@@ -15,6 +15,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Connect Attempt Duration Limit
+    |--------------------------------------------------------------------------
+    |
+    | The duration in minutes how long a connection attempt may take.
+    |
+    */
+
+    'connection-attempt-duration' => 5,
+
+    /*
+    |--------------------------------------------------------------------------
     | Route Middleware
     |--------------------------------------------------------------------------
     |
@@ -36,7 +47,21 @@ return [
     |
     */
 
-    'models' => [],
+    'models' => [
+        'authenticatable' => \App\Models\User::class,
+        'connection-attempt' => \NormanHuth\StreamGames42\Models\ConnectionAttempt::class,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Register Routes
+    |--------------------------------------------------------------------------
+    |
+    | Determine the auth and action routings to be registered.
+    |
+    */
+
+    'routes' => true,
 
     /*
     |--------------------------------------------------------------------------

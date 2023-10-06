@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "NormanHuth\\StreamGames42\\ServiceProvider"
+                "NormanHuth\\StreamGames42\\Providers\\PackageProvider"
             ]
         }
     }

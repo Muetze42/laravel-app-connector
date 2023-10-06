@@ -1,10 +1,11 @@
 <?php
 
-namespace NormanHuth\StreamGames42;
+namespace NormanHuth\StreamGames42\Providers;
 
-use Illuminate\Support\ServiceProvider as Provider;
+use Illuminate\Support\ServiceProvider;
+use NormanHuth\StreamGames42\Helpers;
 
-class ServiceProvider extends Provider
+class PackageProvider extends ServiceProvider
 {
     /**
      * Bootstrap any package services.
@@ -12,16 +13,14 @@ class ServiceProvider extends Provider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/stream-games-42.php' => config_path('stream-games-42.php'),
+            __DIR__ . '/../../config/stream-games-42.php' => config_path('stream-games-42.php'),
         ], 'stream-games-42-config');
 
         $this->publishes([
-            __DIR__ . '/../database/migrations/' => database_path('migrations')
+            __DIR__ . '/../../database/migrations/' => database_path('migrations')
         ], 'stream-games-42-migrations');
 
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-
-
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
     }
 
     /**
@@ -30,7 +29,7 @@ class ServiceProvider extends Provider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/stream-games-42.php',
+            __DIR__ . '/../../config/stream-games-42.php',
             'stream-games-42'
         );
     }
