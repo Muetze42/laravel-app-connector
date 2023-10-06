@@ -1,6 +1,6 @@
 <?php
 
-namespace NormanHuth\StreamGames42\Helpers;
+namespace NormanHuth\LaravelAppConnector\Helpers;
 
 use Composer\Autoload\ClassLoader;
 use Illuminate\Support\Arr;

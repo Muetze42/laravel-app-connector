@@ -1,6 +1,6 @@
 <?php
 
-namespace NormanHuth\StreamGames42\Models;
+namespace NormanHuth\LaravelAppConnector\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;

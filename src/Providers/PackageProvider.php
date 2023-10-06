@@ -1,9 +1,9 @@
 <?php
 
-namespace NormanHuth\StreamGames42\Providers;
+namespace NormanHuth\LaravelAppConnector\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use NormanHuth\StreamGames42\Helpers;
+use NormanHuth\LaravelAppConnector\Helpers;
 
 class PackageProvider extends ServiceProvider
 {
@@ -13,12 +13,12 @@ class PackageProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../../config/stream-games-42.php' => config_path('stream-games-42.php'),
-        ], 'stream-games-42-config');
+            __DIR__ . '/../../config/app-connector.php' => config_path('app-connector.php'),
+        ], 'app-connector-config');
 
         $this->publishes([
             __DIR__ . '/../../database/migrations/' => database_path('migrations')
-        ], 'stream-games-42-migrations');
+        ], 'app-connector-migrations');
 
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
     }
@@ -29,8 +29,8 @@ class PackageProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../../config/stream-games-42.php',
-            'stream-games-42'
+            __DIR__ . '/../../config/app-connector.php',
+            'app-connector'
         );
     }
 

@@ -1,9 +1,9 @@
 {
-    "name": "norman-huth/stream-games-42",
+    "name": "norman-huth/laravel-app-connector",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "NormanHuth\\StreamGames42\\": "src/"
+            "NormanHuth\\LaravelAppConnector\\": "src/"
         }
     },
     "authors": [
@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "NormanHuth\\StreamGames42\\Providers\\PackageProvider"
+                "NormanHuth\\LaravelAppConnector\\Providers\\PackageProvider"
             ]
         }
     }

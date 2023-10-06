@@ -1,6 +1,6 @@
 <?php
 
-namespace NormanHuth\StreamGames42\Http\Controllers;
+namespace NormanHuth\LaravelAppConnector\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
