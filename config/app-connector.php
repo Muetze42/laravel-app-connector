@@ -15,15 +15,27 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Models
+    | Model
     |--------------------------------------------------------------------------
     |
-    | These models will be used in the packet controllers.
+    | The ConnectionAttempt Model.
     |
     */
 
-    'models' => [
-        'authenticatable' => \App\Models\User::class,
-        'connection-attempt' => \NormanHuth\LaravelAppConnector\Models\ConnectionAttempt::class,
-    ],
+    'model' => \NormanHuth\LaravelAppConnector\Models\ConnectionAttempt::class,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Header Data
+    |--------------------------------------------------------------------------
+    |
+    | Determine here in which header keys the client and
+    | the platform are included.
+    |
+    */
+
+    'header' => [
+        'client' => 'machineId',
+        'plattform' => 'plattform',
+    ]
 ];

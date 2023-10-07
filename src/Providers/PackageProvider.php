@@ -12,6 +12,10 @@ class PackageProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if ($this->app->runningInConsole()) {
+            $this->addAbout();
+        }
+
         $this->publishes([
             __DIR__ . '/../../config/app-connector.php' => config_path('app-connector.php'),
         ], 'app-connector-config');
@@ -47,12 +51,10 @@ class PackageProvider extends ServiceProvider
             return;
         }
 
-        if (!$this->app->runningInConsole()) {
-            return;
-        }
-
         $reflection = new \ReflectionClass(__CLASS__);
         $composerJson = dirname($reflection->getFileName(), 2) . DIRECTORY_SEPARATOR . 'composer.json';
+
+        var_dump($composerJson);
 
         if (!file_exists($composerJson)) {
             return;

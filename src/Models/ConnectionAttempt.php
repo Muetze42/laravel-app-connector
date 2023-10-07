@@ -61,8 +61,8 @@ class ConnectionAttempt extends Model
     public static function booted(): void
     {
         static::creating(function (self $attempt) {
-            $attempt->client = request()->header('machineId');
-            $attempt->platform = request()->header('plattform');
+            $attempt->client = request()->header(config('app-connector.header.client'));
+            $attempt->platform = request()->header(config('app-connector.header.plattform'));
             $attempt->uri = str(Str::random())->lower();
         });
     }
