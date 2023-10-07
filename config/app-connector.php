@@ -8,10 +8,11 @@ return [
     |--------------------------------------------------------------------------
     |
     | The duration in minutes how long a connection attempt may take.
+    | Set to null to disable this check.
     |
     */
 
-    'connection-attempt-duration' => 5,
+    'connection-attempt-duration' => 60 * 2,
 
     /*
     |--------------------------------------------------------------------------
