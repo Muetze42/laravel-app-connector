@@ -34,10 +34,10 @@ class Attempt
         /* @var \NormanHuth\LaravelAppConnector\Models\ConnectionAttempt $model */
         $model = config('app-connector.model');
         $attempt = app($model)
-            ->where('id', $id)
-            ->where('uri', $uri)
-            ->where('client', $request->header(config('app-connector.header.client')))
-            ->where('platform', $request->header(config('app-connector.header.plattform')))
+            ->whereId($id)
+            ->whereUri($uri)
+            ->whereClient($request->header(config('app-connector.header.client')))
+            ->wherePlatform($request->header(config('app-connector.header.plattform')))
             ->first();
 
         return !is_null($attempt) && $attempt->token === $token;
